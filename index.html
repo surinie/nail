@@ -1,0 +1,106 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://use.typekit.net/jqe4zfu.css">
+	<style>
+		html, body, h1, h2, h3, p{margin: 0px; padding: 0px}
+		body {margin: 0;
+    background-color: white;
+    width: 1000px}
+	body::before {content: "";
+	    position: fixed;
+	    width: 1100px;
+	    height: 1000px;
+	    left: 340px;
+	    top: 250px;
+	    background-image: url("finger.png");
+	    background-repeat: no-repeat;
+	    background-size: 1100px auto;
+	    pointer-events: none;
+	    z-index: -0.7;}
+	.nail {position: fixed;
+		bottom: 348px;
+	    left: 779px;
+	    width: 164px;
+	    height: 180px;
+	    background-color: #FFFFFF;
+	    border-radius: 10% 10% 47% 47% / 8% 8% 27% 27%;
+	    overflow: hidden;
+		transform:rotate(-1deg)}
+	.highlight {
+	    position: absolute;
+	    width: 60px;
+	    height:  100%;
+	    top: 0%;
+	    left: 10px;
+	    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.5),
+        transparent);
+	    border-radius: 5px;}
+	.speech {
+	    position: absolute;
+	    width: 300px;
+	    bottom: 250px;
+	    height: 30px;
+	    padding: 60px 30px;
+	    background-color: white;
+	    border: 1px solid black;
+	    border-radius: 10px;}
+	.speech::after {
+	    content: "";
+	    position: absolute;
+	    left: 15px;
+	    bottom: -7px;
+	    width: 12px;
+	    height: 12px;
+	    background-color: white;
+	    border-left: 1px solid black;
+	    border-bottom: 1px solid black;
+	    transform: rotate(-45deg);}
+	div{margin-left: 30px;
+			line-height: 20pt;
+			padding-bottom: 30px}
+	h1 {font-size: 40pt;
+		font-family: "helvetica-lt-pro", sans-serif}
+	h3{font-size: 20pt}
+	</style>
+</head>
+<body>
+	<div style="margin: 35px">
+		<h1>Nail Salon</h1>
+	</div>
+	<div>
+		<p>color</p>
+		<input type="range" id="myslider" min="0" max="360" value="180">
+		</div>
+		<div>
+		<p>Transparency</p>
+		<input type="range" id="myslider2" min="60" max="100" value="80" step="10">
+		</div>
+		<div>
+		<p>length</p>
+		<input type="range" id="myslider3" min="180" max="300" value="240" step="20">
+		</div>
+	</div>
+	<div class="nail" id="nail">
+		<div class="highlight"></div>
+	</div>
+	<div class="speech" id="a">
+    	<h3>말풍선 내용</h3>
+	</div>
+	<script>
+		c=prompt('이름을 알려주세요💅')
+		a.innerHTML = c + "님, 어서오세요!"
+
+		myslider.oninput = function(){
+    	nail.style.backgroundColor = "hsla(" + myslider.value + ", 100%, 70%, " + myslider2.value / 100 + ")"}
+		myslider2.oninput = function(){
+		nail.style.backgroundColor = "hsla(" + myslider.value + ", 100%, 70%, " + myslider2.value / 100 + ")"}
+		myslider3.oninput = function(){
+			nail.style.height=myslider3.value +"px"}
+	</script>
+</body>
+</html>
